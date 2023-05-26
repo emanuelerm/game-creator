@@ -17,8 +17,14 @@ class CharacterTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         for($i=0; $i < 10; $i++){
-            $newCharachter = new Character();
-            
+            $newCharacter = new Character();
+            $newCharacter->name = $faker->name();
+            $newCharacter->description = $faker->paragraph(true);
+            $newCharacter->attack = $faker->numberBetween(1, 10);
+            $newCharacter->defence = $faker->numberBetween(1, 10);
+            $newCharacter->speed = $faker->numberBetween(1, 10);
+            $newCharacter->life = $faker->numberBetween(1, 100);
+            $newCharacter->save();
         }
     }
 }
