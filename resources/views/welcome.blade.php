@@ -15,9 +15,16 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-wrap">
     @foreach ($characters as $character)
-        <p>{{$character->name}}</p>
+    <div class="card w-25 m-2">
+        <h2>name: {{$character->name}}</h2>
+        <p>description: {{$character->description}}</p>
+        <p>attack: {{$character->attack}} / 10</p>
+        <p>defence: {{$character->defence}} / 10</p>
+        <p>speed: {{$character->speed}} / 10</p>
+        <p>life:{{$character->life}} / 100</p>
+    </div>
     @endforeach
 </body>
 
